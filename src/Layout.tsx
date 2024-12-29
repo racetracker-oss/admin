@@ -1,10 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import AuthWrapper from './features/auth/AuthWrapper';
 
 const Layout = () => {
   return (
     <>
-      <Navbar />
+      <AuthWrapper>
+        <Navbar />
+      </AuthWrapper>
       <main>
         <Outlet />
       </main>
