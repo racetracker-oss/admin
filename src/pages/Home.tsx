@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <section className="m-10 mt-28 md:m-20">
-      {!isLoggedIn && !user ? (
+      {isLoggedIn && user ? (
         <>
           <h2 className="mt-24 text-center text-2xl font-semibold hover:drop-shadow-4xl transition-all duration-700">
             Now I trust you, my wise friend. Let me {" "}
