@@ -5,8 +5,10 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./redux/store";
 import Loader from "./components/Loader";
 import NotFound from "./pages/NotFound";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
+import AuthWrapper from "./features/auth/AuthWrapper";
+import Dashboard from "./pages/Dashboard";
 
 const Layout = lazy(() => import('./Layout'));
 
@@ -22,6 +24,8 @@ export function App() {
       children: [
         { index: true, element: <Home /> },
         { path: 'login', element: <Login /> },
+        { path: 'dashboard', element: <AuthWrapper><Dashboard /></AuthWrapper> },
+        // { path: 'dashboard', element: <Dashboard /> },
       ],
     },
   ]);

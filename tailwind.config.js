@@ -21,6 +21,13 @@ export default {
         dark: "#18181B",
         darker: "#09090B",
       },
+      dropShadow: {
+        "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
+        "4xl": [
+          "2px 5px 5px rgba(255, 255, 255, 0.4)",
+          "0 5px 8px rgba(20, 103, 225, 0.7)",
+        ],
+      },
     },
   },
   plugins: [],

@@ -6,7 +6,7 @@ import Button from "./Button";
 
 const Navbar = () => {
   const user = useAppSelector((state) => state.auth.user);
-  const isLoggedIn = useAppSelector((state) => state.auth.isAuthenticated);
+  // const isLoggedIn = useAppSelector((state) => state.auth.isAuthenticated);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -86,23 +86,13 @@ const Navbar = () => {
               </li>
             ))}
 
-            {isLoggedIn && user ? (
-              <>
-                <li>
-                  <span className="block pb-2 md:pb-0 font-bold text-lead">{user.email as string}</span>
-                </li>
-                <Button onClick={handleLogout}>
-                  Logout
-                </Button>
-              </>
+            <li>
+              <span className="block pb-2 md:pb-0 font-bold text-lead">{user!.email as string}</span>
+            </li>
+            <Button onClick={handleLogout}>
+              Logout
+            </Button>
 
-            ) : (
-              <li>
-                <Link to="/login">
-                  <Button>Login</Button>
-                </Link>
-              </li>
-            )}
           </ul>
         </div>
       </div>
